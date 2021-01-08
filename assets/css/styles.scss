@@ -1,0 +1,17 @@
+ailwind base;
+@tailwind components;
+.search-box {
+    transition: box-shadow 0.2s linear;
+}
+
+.nav-link {
+    @apply w-full h-full ml-6;
+    a {
+        @apply border-b-2 flex items-center justify-center border-white px-5 h-full;
+        &:hover {
+            @apply border-gray-600;
+        }
+    }
+}
+
+@tailwind utilities;

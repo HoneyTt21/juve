@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_name %}{%endblock%} | HoneyTt </title>
+    <!-- prettier-ignore-start -->
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <!-- prettier-ignore-end-->
+</head>
+
+<body class="text-gray-800 mt-32">
+    <header class="container max-w-full flex fixed inset-0 sm:items-center justify-between px-6 h-24 border-b border-gray-400 bg-white">
+        <div class="flex items-center w-1/2">
+            {%include "partials/header.html"%}
+        </div>
+    </header>
+
+    {%block content%} {%endblock%}
+
+</body>
+
+<footer>
+    {%include "partials/footer.html"%}
+</footer>
+
+</html>
