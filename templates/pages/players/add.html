@@ -1,0 +1,48 @@
+{%extends "base.html"%} {%block page_name%} Players {%endblock%} 
+
+{% block content %}
+
+    {%if user.is_authenticated%}
+        {%if user.is_superuser%}
+            <form method="POST" action="{% url "player:add" %}" class="flex w-3/4 mx-20 px-6 h-full flex-wrap bg-green-400">
+                {% csrf_token %}
+                <div class="player-form">
+                    {{form.club}}
+                    No.
+                    {{form.back_number}}
+                </div>
+                <div class="player-form">
+                    {{form.first_name}}
+                    {{form.mid_name}}
+                    {{form.last_name}}
+                </div>
+                <div class="player-form flex">
+                    {{form.county_born}}
+                    {{form.country_born}}
+                </div>
+                <div class="player-form">
+                    {{form.birthday}} 
+                </div>
+                {% comment %} <div class="player-form flex ">
+                    {{form.nationality_1}}
+                    {{form.nationality_2}}
+                    {{form.nationality_3}}
+                </div> {% endcomment %}
+                <button>Add</button>
+            </form>
+        {%else%}
+            <div>
+                <p>This link is only for admin user</p>
+                <a href="{% url "player:home" %}">Go Back</a>
+            </div>
+        {%endif%}
+    {%else%}
+        <div>
+            <p>This link is only for admin user</p>
+            <a href="{% url "player:home" %}">Go Back</a>
+        </div>
+    {%endif%}
+
+
+
+{% endblock content%}

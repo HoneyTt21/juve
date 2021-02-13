@@ -14,4 +14,17 @@
     }
 }
 
+.player-form {
+    @apply w-full;
+    input {
+        @apply w-1/4 h-16 px-4 mx-4 font-bold text-xl rounded-lg bg-gray-200 text-gray-800;
+    }
+    select {
+        @apply w-1/4 h-16 px-4 mx-4 font-bold text-xl rounded-lg bg-gray-200 text-gray-800;
+    }
+    img {
+        @apply h-full;
+    }
+}
+
 @tailwind utilities;
